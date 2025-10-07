@@ -42,6 +42,7 @@ export const authOptions: AuthOptions = {
           id: userFound.id,
           email: userFound.email,
           username: userFound.username,
+          avatar: userFound.avatar ?? undefined,
           createdAt: userFound.createdAt.toISOString(),
           updatedAt: userFound.updatedAt.toISOString(),
         }
@@ -59,6 +60,7 @@ export const authOptions: AuthOptions = {
         token.id = user.id
         token.email = user.email
         token.username = user.username
+        token.avatar = user.avatar
         token.createdAt = user.createdAt
         token.updatedAt = user.updatedAt
       }
@@ -67,11 +69,18 @@ export const authOptions: AuthOptions = {
     },
     async session({ session, token }) {
       if (session.user) {
-        session.user.id = token.id
-        session.user.email = token.email
-        session.user.username = token.username
-        session.user.createdAt = token.createdAt
-        session.user.updatedAt = token.updatedAt
+        const userFromDb = await prisma.user.findUnique({
+          where: { id: token.id },
+        })
+
+        session.user = {
+          id: token.id,
+          email: token.email,
+          username: token.username,
+          avatar: userFromDb?.avatar ?? undefined,
+          createdAt: token.createdAt,
+          updatedAt: token.updatedAt,
+        }
       }
       return session
     },

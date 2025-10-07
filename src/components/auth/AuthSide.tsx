@@ -1,4 +1,4 @@
-import { BrandLineIcon } from "@/icons"
+import { BrandLineFilledIcon } from "@/icons"
 
 export default function AuthSide() {
   return (
@@ -9,7 +9,7 @@ export default function AuthSide() {
         <span className="text-3xl lg:text-8xl">CHAT</span>
       </h1>
 
-      <BrandLineIcon className="text-white size-20 lg:size-48" />
+      <BrandLineFilledIcon className="text-white size-20 lg:size-48" />
     </aside>
   )
 }

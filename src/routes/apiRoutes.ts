@@ -10,8 +10,10 @@ export const API_ROUTES = {
   },
   USERS: {
     SEARCH_ID_BY_USERNAME_OR_EMAIL: "/api/users/search-id-by-username-or-email",
+    UPLOAD_AVATAR: "/api/users/upload-avatar",
+    DELETE_AVATAR: "/api/users/delete-avatar",
   },
   CHATS: {
-    GET_BY_USER_ID: "/api/chats/get-by-userId",
+    GET_BY_USER_ID: "/api/chat/get-by-userId",
   },
 } as const
