@@ -1,7 +1,7 @@
 "use client"
 import { useChatStore } from "@/store/chatStore"
-import ChatRoom from "./ChatRoom"
 import { BrandLineFilledIcon } from "@/icons"
+import ChatRoom from "./ChatRoom"
 
 interface ChatRoomWrapperProps {
   userId: string

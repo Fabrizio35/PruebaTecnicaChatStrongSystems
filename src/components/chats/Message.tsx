@@ -1,5 +1,5 @@
-import Image from "next/image"
 import { FileIcon } from "@/icons"
+import Image from "next/image"
 
 interface MessageType {
   id: string

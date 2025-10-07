@@ -10,7 +10,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Chat Strong Systems",
-  description: "Chat Strong Systems",
+  description:
+    "Chat Strong Systems - Conéctate y chatea con tus amigos, familiares y conocidos",
 }
 
 export default function RootLayout({
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${inter.className} antialiased`}>
-        <Toaster position="bottom-right" toastOptions={{ duration: 4000 }} />
+        <Toaster position="bottom-left" toastOptions={{ duration: 4000 }} />
         <Providers>{children}</Providers>
       </body>
     </html>

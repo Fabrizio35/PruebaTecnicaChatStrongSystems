@@ -2,10 +2,10 @@
 import { useState, useEffect, ChangeEvent } from "react"
 import { useSession } from "next-auth/react"
 import { API_ROUTES } from "@/routes/apiRoutes"
+import { apiClient } from "@/libs/apiClient"
 import toast from "react-hot-toast"
 import Image from "next/image"
 import LogoutButton from "./LogoutButton"
-import { apiClient } from "@/libs/apiClient"
 
 export default function Profile() {
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null)
